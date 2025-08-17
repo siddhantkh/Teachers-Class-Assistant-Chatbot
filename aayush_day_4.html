@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Responsive Landing Page</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    nav a:hover { color: #cbd5e1; }
+    .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/1600x900/?technology,office') no-repeat center/cover;
+      color: white;
+      transition: background 0.3s ease-in-out;
+    }
+    .hero h2 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
+    .hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+    .btn {
+      padding: 14px 28px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.3s;
+    }
+    .btn:hover { background: #1d4ed8; transform: translateY(-3px); }
+
+    .section { padding: 70px 20px; text-align: center; }
+    .section h3 { margin-bottom: 30px; font-size: 2.2rem; color: #111827; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 30px; }
+    .card { background: white; padding: 30px 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .card h4 { margin-bottom: 15px; font-size: 1.5rem; }
+    .card p { font-size: 1rem; color: #555; }
+
+    footer { background: #111827; color: white; text-align: center; padding: 25px; margin-top: 40px; font-size: 0.95rem; }
+
+    /* Responsive menu */
+    @media (max-width: 768px) {
+      nav { display: none; flex-direction: column; background: #2563eb; position: absolute; top: 60px; right: 0; width: 200px; padding: 20px; }
+      nav.active { display: flex; }
+      .menu-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Modern Landing</h1>
+    <span class="menu-toggle">☰</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Elevate Your Business</h2>
+    <p>Creating modern, responsive, and engaging solutions for a digital-first world.</p>
+    <button class="btn">Get Started</button>
+  </section>
+
+  <section class="section" id="about">
+    <h3>About Us</h3>
+    <p>We are a team of creative thinkers and innovators, dedicated to delivering meaningful and impactful digital experiences for businesses worldwide.</p>
+  </section>
+
+  <section class="section" id="features">
+    <h3>Our Features</h3>
+    <div class="features">
+      <div class="card">
+        <h4>🚀 Fast Performance</h4>
+        <p>Optimized to deliver speed and reliability across all devices and platforms.</p>
+      </div>
+      <div class="card">
+        <h4>📱 Fully Responsive</h4>
+        <p>Beautiful layouts and smooth functionality on mobile, tablet, and desktop.</p>
+      </div>
+      <div class="card">
+        <h4>🔒 Secure & Reliable</h4>
+        <p>Advanced security protocols to ensure your data and applications are safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>Contact Us</h3>
+    <p>Email us at <a href="mailto:info@example.com">info@example.com</a> or reach out via our contact form.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Modern Landing. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('active'));
+
+    // Page loading effect
+    window.addEventListener('load', () => {
+      document.body.style.opacity = '1';
+    });
+  </script>
+</body>
+</html>
